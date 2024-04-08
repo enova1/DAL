@@ -12,7 +12,7 @@ public class AuthorizedUserDbContext : DbContext
     /// <param name="optionsBuilder"></param>
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite($"Data Source={AppDomain.CurrentDomain.BaseDirectory}WebApi.db");
+        optionsBuilder.UseSqlite($"Data Source=C:\\Users\\kozlo\\source\\GitHub\\DAL\\DataAccess\\bin\\Debug\\net8.0\\WebApi.db");
         base.OnConfiguring(optionsBuilder);
     }
 
