@@ -17,13 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Models\Models.csproj" />
-    <ProjectReference Include="..\..\SharedModels\Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Models">
-      <HintPath>..\..\Models\bin\Debug\net8.0\Models.dll</HintPath>
-    </Reference>
-  </ItemGroup>
 
 </Project>
