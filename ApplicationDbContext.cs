@@ -2,11 +2,8 @@
 
 namespace DataAccess
 {
-    public class ApplicationDbContext : DbContext
+    /// <inheritdoc />
+    public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
     {
-        /// <inheritdoc />
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-        {
-        }
     }
 }
