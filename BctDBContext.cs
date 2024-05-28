@@ -4,12 +4,9 @@ using Microsoft.EntityFrameworkCore;
 namespace DataAccess;
 
 /// <inheritdoc />
-public class BctDbContext : DbContext
+/// <inheritdoc />
+public class BctDbContext(DbContextOptions<BctDbContext> options) : DbContext(options)
 {
-    /// <inheritdoc />
-    public BctDbContext(DbContextOptions<BctDbContext> options) : base(options)
-    {
-    }
     /// <summary>
     /// OnConfiguring method to configure the database connection.
     /// </summary>
