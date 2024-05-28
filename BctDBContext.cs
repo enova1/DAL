@@ -30,4 +30,8 @@ public class BctDbContext : DbContext
     public DbSet<EmailTemplate> EmailTemplates { get; set; }
 
     public DbSet<EmailNotificationType> EmailNotificationTypes { get; set; }
+
+    public DbSet<SecurityRoles> SecurityRoles { get; set; }
+    public DbSet<SecurityUsers> SecurityUsers { get; set; }
+    public DbSet<SecurityUserRoles> SecurityUserRoles { get; set; }
 }

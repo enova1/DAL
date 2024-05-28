@@ -10,4 +10,5 @@ public partial class Client
     public string? Code { get; set; }
     public string? Email { get; set; }
     public bool Active { get; set; }
+
 }
