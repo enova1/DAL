@@ -1,5 +1,8 @@
-﻿namespace DataAccess.BctModels;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
+namespace DataAccess.BctModels;
+
+[Table("Email_SystemEmails")]
 public class SystemEmail
 {
     public int Id { get; set; }

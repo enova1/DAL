@@ -1,6 +1,9 @@
-﻿namespace DataAccess.BctModels;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
-public class AdminClientSettings
+namespace DataAccess.BctModels;
+
+[Table("Admin_ClientSettings")]
+public class ClientSettings
 {
     public int Id { get; set; }
     public string ClientCode { get; set; }

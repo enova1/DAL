@@ -1,5 +1,8 @@
-﻿namespace DataAccess.BctModels;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
+namespace DataAccess.BctModels;
+
+[Table("Email_Attachments")]
 public class EmailAttachment
 {
     public int Id { get; set; }

@@ -10,10 +10,18 @@ public class BctDbContext : DbContext
     public BctDbContext(DbContextOptions<BctDbContext> options) : base(options)
     {
     }
+    /// <summary>
+    /// OnConfiguring method to configure the database connection.
+    /// </summary>
+    /// <param name="optionsBuilder"></param>
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer($"Server=localhost;Database=BlackCatTransit;persist security info=True;Integrated Security=SSPI;Encrypt=True;TrustServerCertificate=True;MultipleActiveResultSets=True");
+        base.OnConfiguring(optionsBuilder);
+    }
 
-
-    public DbSet<AdminClient> AdminClients { get; set; }
-    public DbSet<AdminClientSettings> AdminClientSettings { get; set; } 
+    public DbSet<Client> Clients { get; set; }
+    public DbSet<ClientSettings> ClientSettings { get; set; } 
     public DbSet<ReportingProfileTemplate> ReportingProfileTemplates { get; set; }
     public DbSet<ReportReminder> ReportReminders { get; set; }
     public DbSet<SystemEmail> SystemEmails { get; set; }
