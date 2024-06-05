@@ -1,5 +1,6 @@
 ﻿using DataAccess.BctModels;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace DataAccess;
 
@@ -7,13 +8,14 @@ namespace DataAccess;
 /// <inheritdoc />
 public class BctDbContext(DbContextOptions<BctDbContext> options) : DbContext(options)
 {
+    private readonly IConfiguration _configuration = ConfigurationHelper.GetConfiguration();
     /// <summary>
     /// OnConfiguring method to configure the database connection.
     /// </summary>
     /// <param name="optionsBuilder"></param>
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer($"Server=localhost;Database=BlackCatTransit;persist security info=True;Integrated Security=SSPI;Encrypt=True;TrustServerCertificate=True;MultipleActiveResultSets=True");
+        optionsBuilder.UseSqlServer(_configuration.GetConnectionString("BCTConnection"));
         base.OnConfiguring(optionsBuilder);
     }
 
@@ -25,10 +27,9 @@ public class BctDbContext(DbContextOptions<BctDbContext> options) : DbContext(op
     public DbSet<EmailAttachment> EmailAttachments { get; set; }
     public DbSet<EmailSetting> EmailSettings { get; set; }
     public DbSet<EmailTemplate> EmailTemplates { get; set; }
-
     public DbSet<EmailNotificationType> EmailNotificationTypes { get; set; }
-
     public DbSet<SecurityRoles> SecurityRoles { get; set; }
     public DbSet<SecurityUsers> SecurityUsers { get; set; }
     public DbSet<SecurityUserRoles> SecurityUserRoles { get; set; }
+    public DbSet<Contact> Contact { get; set; }
 }

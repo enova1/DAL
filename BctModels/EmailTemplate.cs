@@ -15,4 +15,6 @@ public class EmailTemplate
     public string? Template { get; set; }
     public string TenantCode { get; set; }
     public bool Active { get; set; }
+
+    public int EmailType_Id { get; set; }
 }   

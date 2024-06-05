@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-
+// ReSharper disable EntityFramework.ModelValidation.UnlimitedStringLength
+// ReSharper disable InconsistentNaming
+// ReSharper disable PropertyCanBeMadeInitOnly.Global
 namespace DataAccess.BctModels;
 
 [Table("Admin_Client")]
