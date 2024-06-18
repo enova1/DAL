@@ -31,5 +31,10 @@ public class BctDbContext(DbContextOptions<BctDbContext> options) : DbContext(op
     public DbSet<SecurityRoles> SecurityRoles { get; set; }
     public DbSet<SecurityUsers> SecurityUsers { get; set; }
     public DbSet<SecurityUserRoles> SecurityUserRoles { get; set; }
-    public DbSet<Contact> Contact { get; set; }
+    public DbSet<Contact> Contacts { get; set; }
+
+    public DbSet<Contract> Contracts { get; set; }
+    public DbSet<Organization> Organizations { get; set; }
+    public DbSet<FundSourceType> FundSourceTypes { get; set; }
+    public DbSet<ContractType> ContractTypes { get; set; }
 }
